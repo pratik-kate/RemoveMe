@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "929012163686",
+    "project_id": "removebg-dfaf4",
+    "storage_bucket": "removebg-dfaf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929012163686:android:8e6fe9ca31206a776b39a7",
+        "android_client_info": {
+          "package_name": "com.supertridents.removebackground.object.remover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929012163686-gf45ctimdj4r9r1p5jo6k4mifsqaljgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp9yiAV72MEP5YAICZ89UEOFILMpqtKxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929012163686-gf45ctimdj4r9r1p5jo6k4mifsqaljgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

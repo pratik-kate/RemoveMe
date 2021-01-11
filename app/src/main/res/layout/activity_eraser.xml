@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EraserActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/background_headbar"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/redoButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_toEndOf="@+id/undoButton"
+                android:background="@drawable/icon_redo"
+                android:contentDescription="@string/image" />
+
+            <ImageView
+                android:id="@+id/undoButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/icon_undo"
+                android:contentDescription="@string/image"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/helpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/image"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="33dp"
+                android:layout_toStartOf="@+id/helpButton"
+                android:text="@string/credits"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ecredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/helpButton"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/subBottomBar"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:paddingBottom="50dp" />
+
+            <RelativeLayout
+                android:id="@+id/subBottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#00000000"
+                android:layout_above="@+id/bottomBar"
+                android:gravity="center_vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/magicWand_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/magic_remove_button"
+                        android:layout_width="36dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/magic_remove_button"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitXY" />
+
+                    <ImageButton
+                        android:id="@+id/magic_restore_button"
+                        android:layout_width="36dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/magic_remove_button"
+                        android:background="@drawable/magic_restore_button"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitStart" />
+
+                    <SeekBar
+                        android:id="@+id/magic_seekbar"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:max="30"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:progressDrawable="@drawable/progress"
+                        android:thumb="@drawable/thumb" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/eraser_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/erase_background"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/erase_sub_button"
+                        android:layout_width="33dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/eraser_sub_button"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitXY" />
+
+                    <ImageButton
+                        android:id="@+id/unerase_sub_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/erase_sub_button"
+                        android:background="@drawable/uneraser_sub_button"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitStart" />
+
+                    <ImageButton
+                        android:id="@+id/brush_size_1_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_toStartOf="@+id/brush_size_2_button"
+                        android:background="@drawable/brush_size1_button"
+                        android:contentDescription="@string/image" />
+
+                    <ImageButton
+                        android:id="@+id/brush_size_2_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_toStartOf="@+id/brush_size_3_button"
+                        android:background="@drawable/brush_size2_button"
+                        android:contentDescription="@string/image" />
+
+                    <ImageButton
+                        android:id="@+id/brush_size_3_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_toStartOf="@+id/brush_size_4_button"
+                        android:background="@drawable/brush_size3_button"
+                        android:contentDescription="@string/image" />
+
+                    <ImageButton
+                        android:id="@+id/brush_size_4_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/brush_size4_button"
+                        android:contentDescription="@string/image" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/background_headbar"
+                android:paddingTop="3dp">
+
+                <ImageView
+                    android:id="@+id/magicButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="3dp"
+                    android:contentDescription="@string/image"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/ripple"
+                    android:saveEnabled="false"
+                    android:src="@drawable/ic_magic" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="49dp"
+                    android:layout_height="23dp"
+                    android:layout_below="@+id/magicButton"
+                    android:layout_alignStart="@+id/magicButton"
+                    android:layout_alignEnd="@+id/magicButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="bottom|center"
+                    android:text="@string/magic"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/eraseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toEndOf="@+id/magicButton"
+                    android:clickable="true"
+                    android:contentDescription="@string/image"
+                    android:focusable="auto"
+                    android:foreground="@drawable/ripple"
+                    android:saveEnabled="false"
+                    android:src="@drawable/ic_eraser" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="49dp"
+                    android:layout_height="23dp"
+                    android:layout_alignStart="@+id/eraseButton"
+                    android:layout_alignEnd="@+id/eraseButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="bottom|center"
+                    android:text="Manual"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/mirrorButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@+id/positionButton"
+                    android:contentDescription="@string/image"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/ripple"
+                    android:saveEnabled="false"
+                    android:src="@drawable/ic_mirror" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="49dp"
+                    android:layout_height="23dp"
+                    android:layout_alignStart="@+id/mirrorButton"
+                    android:layout_alignEnd="@+id/mirrorButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="bottom|center"
+                    android:text="@string/mirror"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/positionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/image"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/ripple"
+                    android:saveEnabled="false"
+                    android:src="@drawable/ic_position" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:layout_alignStart="@+id/positionButton"
+                    android:layout_alignEnd="@+id/positionButton"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="bottom|center"
+                    android:text="@string/adjust"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/nextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    android:contentDescription="@string/image"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/ripple"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_save" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

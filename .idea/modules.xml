@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RemoveIt.iml" filepath="$PROJECT_DIR$/.idea/RemoveIt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RemoveMe.iml" filepath="$PROJECT_DIR$/.idea/modules/RemoveMe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RemoveMe.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RemoveMe.app.iml" />
     </modules>
   </component>
 </project>
